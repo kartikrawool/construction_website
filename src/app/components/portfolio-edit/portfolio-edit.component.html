@@ -1,0 +1,115 @@
+<nav>
+    <a routerLinkActive="active" routerLink="/home">Home</a>
+    <a routerLinkActive="active" routerLink="/portfolio-list">View Projects</a>
+    <a routerLinkActive="active" routerLink="/create-portfolio">Add Project</a>
+    <a routerLinkActive="active" routerLink="/message-list">Messages</a>
+</nav>
+<br>
+<br>
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+        <!-- form card register -->
+        <div class="card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-0">Edit Project</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="inputClient">Client</label>
+                        <input class="form-control" type="text" formControlName="client">
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.client.errors?.required">
+                            Client is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputLocation">Location</label>
+                        <input class="form-control" type="text" formControlName="location">
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.location.errors?.required">
+                            Location is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputBudget">Budget</label>
+                        <input class="form-control" type="text" formControlName="budget">
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.budget.errors?.required">
+                            Enter budget.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.budget.errors?.pattern">
+                            Enter Numbers Only
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputSurfaceArea">Surface Area</label>
+                        <input class="form-control" type="text" formControlName="surface_area">
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.surface_area.errors?.required">
+                            Enter surface area.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.surface_area.errors?.pattern">
+                            Enter Numbers Only
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputSector">Sector</label>
+                        <input class="form-control" type="text" formControlName="sector">
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.sector.errors?.required">
+                            Sector is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputConstruction">Construction</label>
+                        <input class="form-control" type="text" formControlName="construction">
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.construction.errors?.required">
+                            Construction is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputProjectDescription">Project Description</label>
+                        <input class="form-control" type="text" formControlName="project_description">
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.project_description.errors?.required">
+                            Project Description is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputImportantFacts">Important Facts</label>
+                        <input class="form-control" type="text" formControlName="important_facts">
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.important_facts.errors?.required">
+                            ImportantFacts is required.
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="inputImage"> Upload Image</label>
+                        <input (change)="onFileSelect($event)" type="file">
+                    </div>-->
+                    <div *ngIf="imageData; else oldImage">
+                        <img [src]="imageData" [alt]="editForm.value.client" />
+                    </div>
+                    <ng-template #oldImage>
+                        <img [src]="editForm.value.imagePath" [alt]="editForm.value.client" />
+                    </ng-template>
+                    <div class="form-group">
+                        <input type="hidden" formControlName="imagePath">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-lg btn-block" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- form  -->
+    </div>
+</div>
