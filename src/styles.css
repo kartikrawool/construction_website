@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+img {
+    width: 400px;
+    height: 267px;
+  }
+  @import './assets/css/style.css';
+  @import './assets/css/bootstrap.min.css';
+  @import './assets/css/core.css';
+  @import './assets/css/custom.css';
+  @import './assets/css/font-awesome.css';
+  @import './assets/css/material-design-iconic-font.min.css';
+  @import './assets/css/owl.carousel.min.css';
+  @import './assets/css/owl.theme.default.min.css';
+  @import './assets/css/responsive.css';
+  @import './assets/css/plugins/animate-slider.css';
+  @import './assets/css/plugins/animate.css';
+  @import './assets/css/plugins/jquery-ui.css';
+  @import './assets/css/plugins/magnific-popup.css';
+  @import './assets/css/plugins/meanmenu.css';
+  @import './assets/css/plugins/slick-theme.css';
+  @import './assets/css/plugins/slick.css';
+  @import './assets/css/shortcode/default.css';
+  @import './assets/css/shortcode/footer.css';
+  @import './assets/css/shortcode/header.css';
+  @import './assets/css/shortcode/shortcodes.css';
+  @import './assets/css/shortcode/slider.css';
+
